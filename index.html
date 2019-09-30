@@ -1,0 +1,59 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    function leftArrowPressed() {
+      alert("leftArrowPressed" );
+      window.location = prevUrl  
+    }
+
+    function rightArrowPressed() {
+      alert("rightArrowPressed" );
+      window.location = nextUrl  
+    }
+    function topArrowPressed() {
+      alert("topArrowPressed" );
+      window.location = prevUrl  
+    }
+
+    function downArrowPressed() {
+      alert("downArrowPressed" );
+      window.location = nextUrl  
+    }
+
+        document.onkeydown = function(evt) {
+                        var nextPage = $("#next_page_link")
+                        var prevPage = $("#previous_page_link")
+                        nextUrl = nextPage.attr("href")
+                        prevUrl = prevPage.attr("href")
+        evt = evt || window.event;
+        switch (evt.keyCode) {
+                case 37:
+                leftArrowPressed(nextUrl);
+                break;
+
+                case 38:
+                topArrowPressed(nextUrl);
+                break;
+
+                 case 39:
+                rightArrowPressed(prevUrl);
+                break;
+
+                case 40:
+                downArrowPressed(prevUrl);
+                break;
+
+        }
+    };
+
+
+</script>
+</head>
+<body>
+<p>
+</p>
+</body>
+</html>
